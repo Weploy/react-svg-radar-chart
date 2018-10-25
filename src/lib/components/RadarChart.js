@@ -13,6 +13,8 @@ const noSmoothing = points => {
 
 const defaultOptions = {
   size: 300,
+  height: 180,
+  width: 180,
   axes: true, // show axes?
   scales: 3, // show scale circles?
   captions: true, // show captions?
@@ -31,7 +33,7 @@ const defaultOptions = {
 };
 
 const RadarChart = props => {
-  const { data, captions, options } = props;
+  const { data, captions, options, width, height } = props;
   let { size } = props;
   if (!size) {
     size = defaultOptions.size;
@@ -43,8 +45,8 @@ const RadarChart = props => {
     <svg
       version="1"
       xmlns="http://www.w3.org/2000/svg"
-      width={size}
-      height={size}
+      width={width}
+      height={height}
       viewBox={`-${captionMargin} 0 ${size + captionMargin * 2} ${size}`}
     >
       {chart}

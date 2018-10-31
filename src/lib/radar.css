@@ -3,11 +3,6 @@
 	fill-opacity: .3;
 }
 
-.shape:hover {
-	fill-opacity: .65;
-	z-index: 100;
-}
-
 .scale {
 	fill: #FAFAFA;
 	stroke: #999;

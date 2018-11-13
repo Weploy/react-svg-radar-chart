@@ -70,7 +70,16 @@ const caption = options => col => (
     dy={(options.captionProps(col).fontSize || 10) / 2}
     {...options.captionProps(col)}
   >
-    {col.caption}
+    {
+      col.caption.split(" ").map((word, index) => (
+        <tspan
+          x={polarToX(col.angle, (options.size / 2) * 0.95).toFixed(4)}
+          dy={index === 0 ? 0 : (options.captionProps(col).fontSize)}
+        >
+          {word}
+        </tspan>
+      ))
+    }
   </text>
 );
 
